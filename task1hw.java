@@ -40,12 +40,20 @@ public class task1hw {
         } while (!itemArr.text.equals("exit"));
         scan.close();
     }
-    
+
+    /**
+     * Класс имеет два хранения индекса и значения элемента списка/массива
+     */
     public class ItemArray {
         String text;
         int index;
     }
 
+    /**
+     * Расделяет строку str по разделителю sep и возвращает результат в виде экземпляра класса ItemArr.
+     * (Правильно сформулировал?)
+     * Если значение индекса item.index не является натуральным числом или нулем, то в item.index записывается -1.
+     */
     public static ItemArray parseString(String str, String sep) {
         String[] arr = str.split(sep);
         ItemArray item = new task1hw().new ItemArray();
@@ -59,6 +67,10 @@ public class task1hw {
         return item;
     }
 
+    /**
+     * Добавляет в список arr значение item.text по индексу item.index. Если длины списка не достаточно, добавляет элементы 
+     * заполненные пустыми строками.
+     */
     public static void appendArrLst(ArrayList<String> arr, ItemArray item) {
         if (item.index >= arr.size()){
             for (int i = arr.size(); i <= item.index; i++) {
